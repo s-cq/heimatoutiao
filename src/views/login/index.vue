@@ -59,13 +59,8 @@ export default {
             data: this.loginForm
           }).then(result => {
             //   存储令牌健名自定义
-            window.localStorage.setItem('user-token', result.data.data.token)
+            window.localStorage.setItem('user-token', result.data.token)
             this.$router.push('/home')
-          }).catch(() => {
-            this.$message({
-              type: 'warning',
-              message: ('手机号或验证码错误')
-            })
           })
         }
       })
