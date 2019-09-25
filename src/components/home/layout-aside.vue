@@ -26,9 +26,9 @@
         <el-menu-item index="/home/comment">评论管理</el-menu-item>
         <el-menu-item index="/home/material">素材管理</el-menu-item>
       </el-submenu>
-      <el-submenu index="2">
+      <el-submenu index="3">
 
-        <template slot="title">
+        <template slot="title" index="2">
           <i class="el-icon-document"></i>
           <span>粉丝管理</span>
         </template>
