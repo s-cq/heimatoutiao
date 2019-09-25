@@ -18,7 +18,7 @@
               </el-form-item>
            <!-- 封面 -->
           <el-form-item label="封面" style="margin-top:100px" prop="cover">
-            <!-- 按钮elmment带有的change事件可获得label值  v-model绑定type值-->
+            <!-- 按钮elmment带有的change事件可获得续重的label值  v-model绑定label值-->
                <el-radio-group @change="changeRadio" v-model="formData.cover.type">
                   <!-- 封面类型 -1:自动，0-无图，1-1张，3-3张 -->
                     <el-radio :label="1">单选</el-radio>
@@ -27,8 +27,8 @@
                     <el-radio :label="-1">自动</el-radio>
                 </el-radio-group>
           </el-form-item>
-          <!-- 图片插件 -->
-          <cover-image :images="formData.cover.images"></cover-image>
+    <!-- =============      <====================!-- 图片插件 --> -->
+          <cover-image @selecImg='changeImg' :images="formData.cover.images"></cover-image>
           <!-- 频道 -->
           <el-form-item label="频道" prop="channel_id">
                <el-select v-model="formData.channel_id">
@@ -48,6 +48,7 @@
 export default {
   data () {
     return {
+
       channels: [],
       formData: {
         title: '', // 标题
@@ -70,6 +71,15 @@ export default {
     }
   },
   methods: {
+    // 子组件传过来的
+    changeImg (url, index) {
+      // 一、只能用于数字或字符串
+
+      this.formData.cover.images.splice(index, 1, url)
+      // 二、
+      // this.formData.cover.images.map((item, i) => i === index ? url : item)
+      // this.formData.cover.images = url   错误的 vue中  【this.list[index] = 什么值】不能这样写
+    },
     // 改变按钮获取最新的type值
     changeRadio () {
       if (this.formData.cover.type === 1) {
