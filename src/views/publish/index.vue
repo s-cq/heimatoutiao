@@ -27,12 +27,15 @@
                     <el-radio :label="-1">自动</el-radio>
                 </el-radio-group>
           </el-form-item>
+          <!-- 图片插件 -->
+          <cover-image :images="formData.cover.images"></cover-image>
           <!-- 频道 -->
           <el-form-item label="频道" prop="channel_id">
                <el-select v-model="formData.channel_id">
                     <el-option v-for="item in channels" :key="item.id" :value="item.id" :label="item.name"></el-option>
                 </el-select>
           </el-form-item>
+
           <el-form-item>
                 <el-button @click="publish(false)" type='primary'>发布文章</el-button>
                 <el-button @click="publish(true)">存入草稿</el-button>
