@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import eventBus from '../../../../laoshi heima/83heimatoutiao/src/utils/eventBus'
 
 export default {
   data () {
@@ -58,6 +59,9 @@ export default {
   },
   created () {
     this.getUserInfo()
+    eventBus.$on('bbbb', () => {
+      this.getUserInfo()
+    })
   }
 }
 </script>

@@ -37,7 +37,7 @@
         <el-menu-item index="/home/fanpic">粉丝列表</el-menu-item>
         <el-menu-item index="/home/fanlist">粉丝画像</el-menu-item>
       </el-submenu>
-      <el-menu-item >
+      <el-menu-item  index="/home/account">
         <i class="el-icon-s-tools"></i>
         <span slot="title"  >账户信息</span>
       </el-menu-item>

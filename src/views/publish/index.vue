@@ -27,7 +27,7 @@
                     <el-radio :label="-1">自动</el-radio>
                 </el-radio-group>
           </el-form-item>
-    <!-- =============      <====================!-- 图片插件 --> -->
+    <!-- =============      <====================!-- 图片插件 -->
           <cover-image @selecImg='changeImg' :images="formData.cover.images"></cover-image>
           <!-- 频道 -->
           <el-form-item label="频道" prop="channel_id">
